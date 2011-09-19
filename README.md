@@ -23,3 +23,26 @@ Or you can block the entire site by adding
 `Robots::$block_entire_site = $true;` 
 
 into your `/mysite/_config.php` file.
+
+What This Module Does
+---------------------
+
+The module creates a url handler for /robots.txt which contains all the urls not allowed. For example, if `Robots::$block_entire_site` is set to **true**, it will generate the following:
+
+		User-agent: *
+		Disallow: /
+		
+For pages, it also inserts a header `<meta name="robots" content="noindex, nofollow">`.
+
+Todo
+----
+
+*	Think of a way to block different User-agents
+*	Allow for generic rules through SiteConfig or similar
+*	?
+
+Caveats
+-------
+
+*	If you have a file called robots.txt the file will take precedence
+*	Disallowing robot access to "/secret-folder/" makes it more likely to be found by nefarious crawlers 
