@@ -20,7 +20,7 @@ Save this module into a folder called `noindex` and do a `/dev/build`. You can n
 
 Or you can block the entire site by adding
 
-`Robots::$block_entire_site = $true;` 
+`Robots::$block_entire_site = true;` 
 
 into your `/mysite/_config.php` file.
 
